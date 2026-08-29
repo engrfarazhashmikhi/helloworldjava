@@ -1,24 +1,68 @@
 package helloworldjava;
 
 public class JavaRefresh {
-	public void primitiveTypes() {
-//		There are Eight (08) Premitive Dataypes in Java.
-		byte age = 127; // (08) Bits called 1 Byte
-		System.out.println("Byte Age: " + age + ".");
-		short score = 32767; // (02) Bytes: 16 Bits
-		System.out.println("Short Score: " + score + ".");
-		int salary = 2100000000; // (04) Bytes: 32 Bits.
-		System.out.println("Integer Salary: " + salary + ".");
-		long distance = 2100000000l; // (08) Bytes: 64 Bits.
-		System.out.println("Long Distance: " + distance + ".");
-		float PI = 3.14f; // (04) Bytes: 32 Bits. SIngle Precision Fractional.
-		System.out.println("Float PI: " + PI + ".");
-		double price = 44.33; // (08) Bytes: 64 Bits. Double Precision Fractional.
-		System.out.println("Double Price: " + price + ".");
-		boolean weekend = true; // (01) Bit. Only (True or False).
-		System.out.println("Boolean Weekend: " + weekend + ".");
-		char letter = 'P'; // (02) Bytes: 16 Bits, Unicode Characters, SIngle Quoted.
-		System.out.println("Char Letter: " + letter + ".");
+	public void JavaArray() {
+		byte target, i;
+		byte[] score = { 85, 92, 78, 99, 64 };
+		target = 99;
+		i = 0;
+		for (i = 0; i <= (score.length - 1); i++) {
+			if (score[i] == target) {
+				System.out.println(target + " is at position: " + i);
+				break;
+//				continue;
+			}
+		}
+	}
+
+	public void JavaLoops() {
+		short i, total, j;
+		i = total = 0;
+
+		// Logic Breakdown:
+		// 1 / 2 = 0.5
+		// 2 / 2 = 1
+		// 3 / 2 = 1.5
+		// 4 / 2 = 2
+		// 5 / 2 = 2.5
+		// 6 / 2 = 3
+		// Even Calculation: (1+2+3) = (6)
+		// Odd Calculation: (0.5+1.5+2.5) = (4.5)
+
+		// Correct Logic Breakdown:
+		// 1 % 2 = 1
+		// 2 % 2 = 0
+		// 3 % 2 = 1
+		// 4 % 2 = 0
+		// 5 % 2 = 1
+		// 6 % 2 = 0
+		// Even Calculation: (2+4) = (06)
+		// Odd Calculation: (1+3+5) = (09)
+
+		for (i = 1; i <= 5; i++) {
+			if (i % 2 == 0) {
+				total += i;
+			}
+		}
+		System.out.format("%s %d%n", "Total: ", total);
+	}
+
+	public void JavaString() {
+
+		String myCountry = "PAKISTAN";
+		String country = "Pakistan";
+		String myCity = new String("Karachi");
+		String city = new String("KARACHI");
+
+		System.out.println(myCountry.toLowerCase() == country.toLowerCase()); // returns (false) because (Primitive
+																				// DataType).
+		System.out.println(country.toLowerCase().equals(myCountry.toLowerCase())); // returns (true) because (Object
+																					// Comparison).
+
+		System.out.println(myCity.toLowerCase() == city.toLowerCase()); // returns (false) because two Objects cannot
+																		// have same address.
+		System.out.println(myCity.toLowerCase().equals(city.toLowerCase())); // returns (true) because Two Different
+																				// Objects have Same Text.
 	}
 
 	public void nonPrimitiveTypes() {
@@ -43,45 +87,24 @@ public class JavaRefresh {
 			i++;
 		} while (i < textStatement.length());
 	}
-	public void JavaLoops() {
-		short i, total, j;
-		i = total = 0;
 
-		//Logic Breakdown:
-		//1 / 2 = 0.5
-		//2 / 2 = 1
-		//3 / 2 = 1.5
-		//4 / 2 = 2
-		//5 / 2 = 2.5
-		//6 / 2 = 3
-		//Even Calculation: (1+2+3) = (6)
-		//Odd Calculation: (0.5+1.5+2.5) = (4.5)
-
-		//Correct Logic Breakdown:
-		//1 % 2 = 1
-		//2 % 2 = 0
-		//3 % 2 = 1
-		//4 % 2 = 0
-		//5 % 2 = 1
-		//6 % 2 = 0
-		//Even Calculation: (2+4) = (06)
-		//Odd Calculation: (1+3+5) = (09)
-
-		for (i = 1; i <= 5; i++) {
-			if(i % 2 == 0) { total += i; }
-			} System.out.format("%s %d%n", "Total: ", total);
-	}
-	public void JavaArray() {
-		byte target, i;
-		byte[] score = {85, 92, 78, 99, 64};
-		target = 99;
-		i =0;
-		for(i = 0; i <= (score.length-1); i++) {
-			if(score[i] == target) {
-				System.out.println(target + " is at position: " + i);
-				break;
-//				continue;
-			}
-		}
+	public void primitiveTypes() {
+//		There are Eight (08) Premitive Dataypes in Java.
+		byte age = 127; // (08) Bits called 1 Byte
+		System.out.println("Byte Age: " + age + ".");
+		short score = 32767; // (02) Bytes: 16 Bits
+		System.out.println("Short Score: " + score + ".");
+		int salary = 2100000000; // (04) Bytes: 32 Bits.
+		System.out.println("Integer Salary: " + salary + ".");
+		long distance = 2100000000l; // (08) Bytes: 64 Bits.
+		System.out.println("Long Distance: " + distance + ".");
+		float PI = 3.14f; // (04) Bytes: 32 Bits. SIngle Precision Fractional.
+		System.out.println("Float PI: " + PI + ".");
+		double price = 44.33; // (08) Bytes: 64 Bits. Double Precision Fractional.
+		System.out.println("Double Price: " + price + ".");
+		boolean weekend = true; // (01) Bit. Only (True or False).
+		System.out.println("Boolean Weekend: " + weekend + ".");
+		char letter = 'P'; // (02) Bytes: 16 Bits, Unicode Characters, SIngle Quoted.
+		System.out.println("Char Letter: " + letter + ".");
 	}
 }

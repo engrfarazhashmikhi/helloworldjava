@@ -3,13 +3,6 @@ package helloworldjava;
 import java.util.Scanner;
 
 public class Functions extends JavaRefresh {
-	public String userInput(String statement) {
-		System.out.println(statement);
-		Scanner scan = new Scanner(System.in);
-		String getUserInput = scan.next();
-		return getUserInput;
-	}
-
 	public double calcuateNetProfit(double revenue, double expenses) {
 //		Net Profit Formula: (Total Revenue - Total Expenses)
 		double Net_Profit = (revenue - expenses);
@@ -23,5 +16,12 @@ public class Functions extends JavaRefresh {
 		double Total_Investment = Double.parseDouble(this.userInput("Enter Investment Amount: "));
 		double ROI = ((Net_Profit / Total_Investment) * 100);
 		return ROI;
+	}
+
+	public String userInput(String statement) {
+		System.out.println(statement);
+		Scanner scan = new Scanner(System.in);
+		String getUserInput = scan.next();
+		return getUserInput;
 	}
 }
