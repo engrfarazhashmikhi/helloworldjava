@@ -44,6 +44,31 @@ public class JavaRefresh {
 		} while (i < textStatement.length());
 	}
 	public void JavaLoops() {
-		
+		short i, total, j;
+		i = total = 0;
+
+		//Logic Breakdown:
+		//1 / 2 = 0.5
+		//2 / 2 = 1
+		//3 / 2 = 1.5
+		//4 / 2 = 2
+		//5 / 2 = 2.5
+		//6 / 2 = 3
+		//Even Calculation: (1+2+3) = (6)
+		//Odd Calculation: (0.5+1.5+2.5) = (4.5)
+
+		//Correct Logic Breakdown:
+		//1 % 2 = 1
+		//2 % 2 = 0
+		//3 % 2 = 1
+		//4 % 2 = 0
+		//5 % 2 = 1
+		//6 % 2 = 0
+		//Even Calculation: (2+4) = (06)
+		//Odd Calculation: (1+3+5) = (09)
+
+		for (i = 1; i <= 5; i++) {
+			if(i % 2 == 0) { total += i; }
+			} System.out.format("%s %d%n", "Total: ", total);
 	}
 }
