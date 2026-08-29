@@ -1,7 +1,7 @@
 package helloworldjava;
 
-public class hello extends functions {
-	public hello() {
+public class Hello extends Functions {
+	public Hello() {
 		String greetings = "Assalam-O-Alaikum World From Java Programming Language";
 		this.display(greetings.toString());
 	}
@@ -12,7 +12,7 @@ public class hello extends functions {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			hello m = new hello();
+			Hello m = new Hello();
 			m.display(m.toString());
 		} catch (Exception e) {
 			// TODO: handle exception

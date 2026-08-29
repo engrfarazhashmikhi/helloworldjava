@@ -1,7 +1,7 @@
 package helloworldjava;
 
 public class JavaRefresh {
-	public void Primitives() {
+	public void primitiveTypes() {
 //		There are Eight (08) Premitive Dataypes in Java.
 		byte age = 127; // (08) Bits called 1 Byte
 		System.out.println("Byte Age: " + age + ".");
@@ -21,7 +21,7 @@ public class JavaRefresh {
 		System.out.println("Char Letter: " + letter + ".");
 	}
 
-	public void NonPrimitive() {
+	public void nonPrimitiveTypes() {
 		// Non Primitives DataTypes are programmer defined, except String and Array
 		// DataTypes.
 		String textStatement = "I Love Java Programming Language.";
