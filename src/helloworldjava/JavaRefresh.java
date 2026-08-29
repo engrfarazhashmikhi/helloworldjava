@@ -1,6 +1,6 @@
 package helloworldjava;
 
-public class datatypes {
+public class JavaRefresh {
 	public void Primitives() {
 //		There are Eight (08) Premitive Dataypes in Java.
 		byte age = 127; // (08) Bits called 1 Byte
