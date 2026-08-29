@@ -71,4 +71,17 @@ public class JavaRefresh {
 			if(i % 2 == 0) { total += i; }
 			} System.out.format("%s %d%n", "Total: ", total);
 	}
+	public void JavaArray() {
+		byte target, i;
+		byte[] score = {85, 92, 78, 99, 64};
+		target = 99;
+		i =0;
+		for(i = 0; i <= (score.length-1); i++) {
+			if(score[i] == target) {
+				System.out.println(target + " is at position: " + i);
+				break;
+//				continue;
+			}
+		}
+	}
 }
