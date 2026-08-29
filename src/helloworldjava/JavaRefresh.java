@@ -43,4 +43,7 @@ public class JavaRefresh {
 			i++;
 		} while (i < textStatement.length());
 	}
+	public void JavaLoops() {
+		
+	}
 }
