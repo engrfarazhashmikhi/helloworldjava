@@ -20,8 +20,14 @@ public class Functions extends JavaRefresh {
 
 	public String userInput(String statement) {
 		System.out.println(statement);
-		Scanner scan = new Scanner(System.in);
-		String getUserInput = scan.next();
+		String getUserInput = "";
+		try (Scanner scan = new Scanner(System.in)) {
+			getUserInput = scan.next();
+		} catch (Exception e) {
+			// TODO: handle exception
+			getUserInput = (e.getMessage());
+		}
 		return getUserInput;
+
 	}
 }

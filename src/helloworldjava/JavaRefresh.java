@@ -1,6 +1,6 @@
 package helloworldjava;
 
-public class JavaRefresh {
+public class JavaRefresh extends Maths {
 	public void JavaArray() {
 		byte target, i;
 		byte[] score = { 85, 92, 78, 99, 64 };
@@ -16,7 +16,7 @@ public class JavaRefresh {
 	}
 
 	public void JavaLoops() {
-		short i, total, j;
+		short i, total;
 		i = total = 0;
 
 		// Logic Breakdown:

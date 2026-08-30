@@ -1,6 +1,6 @@
 package helloworldjava;
 
-public class Banking extends Maths{
+public class Banking extends Maths {
 
 	private double accountBalance = 0;
 	private int accountNumber = 0;
@@ -8,7 +8,7 @@ public class Banking extends Maths{
 	public Banking(int accountNumber, double accountBalance) {
 		// TODO Auto-generated constructor stub
 		this.accountBalance = accountBalance;
-		this.accountNumber = accountNumber;
+		this.setAccountNumber(accountNumber);
 	}
 
 	public double creditBalance(double addBalance) {
@@ -25,6 +25,20 @@ public class Banking extends Maths{
 			withdraw = this.accountBalance;
 		}
 		return withdraw;
+	}
+
+	/**
+	 * @return the accountNumber
+	 */
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	/**
+	 * @param accountNumber the accountNumber to set
+	 */
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
 	}
 
 	public double showBalance() {

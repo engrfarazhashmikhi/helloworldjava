@@ -1,6 +1,6 @@
 package helloworldjava;
 
-public class Hello extends Functions{
+public class Hello extends Functions {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
