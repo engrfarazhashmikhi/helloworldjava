@@ -1,12 +1,11 @@
 package helloworldjava;
 
-public class Hello extends Functions {
+public class Hello extends Functions{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			Hello m = new Hello();
-			m.display(m.getClass().toString());
-
+			Hello hello = new Hello();
+			hello.display(hello.getClass().toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Error Occur: " + e.getMessage() + ".");
