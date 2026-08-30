@@ -1,6 +1,6 @@
 package helloworldjava;
 
-public class Banking {
+public class Banking extends Maths{
 
 	private double accountBalance = 0;
 	private int accountNumber = 0;
@@ -12,7 +12,7 @@ public class Banking {
 	}
 
 	public double creditBalance(double addBalance) {
-		this.accountBalance += addBalance;
+		this.accountBalance = addition(this.accountBalance, addBalance);
 		return this.accountBalance;
 	}
 
@@ -20,7 +20,7 @@ public class Banking {
 		double withdraw = 0.00;
 		if (this.accountBalance >= cashAmount) {
 			withdraw = cashAmount;
-			this.accountBalance -= withdraw;
+			this.accountBalance = substraction(this.accountBalance, withdraw);
 		} else {
 			withdraw = this.accountBalance;
 		}
