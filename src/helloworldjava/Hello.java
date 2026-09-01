@@ -1,19 +1,30 @@
 package helloworldjava;
 
-public class Hello extends Functions {
+//public class Hello extends Functions {
+public class Hello extends Payments {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
 			Hello hello = new Hello();
-			hello.display(hello.getClass().toString());
+//			hello.display(hello.getClass().toString());
+			hello.status = hello.CashIn();
+			hello.display(hello.status);
+			hello.status = hello.start();
+			hello.display(hello.status);
+			hello.status = hello.CashOut();
+			hello.display(hello.status);
+			hello.status = hello.stop();
+			hello.display(hello.status);
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Error Occur: " + e.getMessage() + ".");
+			System.out.println("tError Occur: " + e.getMessage() + ".");
 		}
 	}
 
 	// Instance variable
 	int age = 30;
+
+	String status;
 
 	public Hello() {
 		String greetings = "Assalam-O-Alaikum World From Java Programming Language";
@@ -27,6 +38,18 @@ public class Hello extends Functions {
 
 	public void display(Object obj) {
 		System.out.println(obj);
+	}
+
+	@Override
+	public String start() {
+		status = "STARTED";
+		return status;
+	}
+
+	@Override
+	public String stop() {
+		status = "STOPPED";
+		return status;
 	}
 
 	public void stringExample() {
