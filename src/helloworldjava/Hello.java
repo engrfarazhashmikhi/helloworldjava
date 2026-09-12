@@ -5,19 +5,14 @@ public class Hello extends Payments {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			Hello hello = new Hello();
+//			Hello hello = new Hello();
 //			hello.display(hello.getClass().toString());
-			hello.status = hello.CashIn();
-			hello.display(hello.status);
-			hello.status = hello.start();
-			hello.display(hello.status);
-			hello.status = hello.CashOut();
-			hello.display(hello.status);
-			hello.status = hello.stop();
-			hello.display(hello.status);
+			BasicMath bM = new BasicMath();
+			bM.generalMath();
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("tError Occur: " + e.getMessage() + ".");
+			System.out.println("Error Occur: " + e.getMessage() + ".\n");
+			System.err.print("Error Stack: " + e.getStackTrace() + ".\n");
 		}
 	}
 
