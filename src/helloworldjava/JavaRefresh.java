@@ -1,6 +1,52 @@
 package helloworldjava;
 
 public class JavaRefresh extends Maths {
+	public void dataTypesJava() {
+
+//		Java Primitive Variables:
+
+		System.out.println("Java Primitive Variables");
+
+		byte b = 28;
+		short s = 28;
+		long l = 28L;
+		int i = 28;
+		float f = 28.00f;
+		double d = 28D;
+		char c = 'P';
+		boolean bool = true;
+
+		System.out.println("Byte Value: " + (b) + ".");
+		System.out.println("Short Value: " + (s) + ".");
+		System.out.println("Long Value: " + (l) + ".");
+		System.out.println("Int Value: " + (i) + ".");
+		System.out.println("Float Value: " + (f) + ".");
+		System.out.println("Double Value: " + (d) + ".");
+		System.out.println("Char Value: " + (c) + ".");
+		System.out.println("Boolean Value: " + (bool) + ".");
+
+		System.out.println("Java NoN-Primitive Variables");
+
+		String str = "PAKISTAN";
+		byte counting[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+		System.out.println("Sting s: " + str);
+		System.out.println("INT Array:");
+		for (b = 0; b < counting.length; b++) {
+			System.out.format("%d%n", counting[b]);
+		}
+	}
+
+	public void doLoopExample() {
+
+		int count[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+		int len = count.length;
+		int loop = 0;
+		do {
+			System.out.println(count[loop]);
+			loop++;
+		} while (loop < len);
+	}
+
 	public void JavaArray() {
 		byte target, i;
 		byte[] score = { 85, 92, 78, 99, 64 };
@@ -106,5 +152,38 @@ public class JavaRefresh extends Maths {
 		System.out.println("Boolean Weekend: " + weekend + ".");
 		char letter = 'P'; // (02) Bytes: 16 Bits, Unicode Characters, SIngle Quoted.
 		System.out.println("Char Letter: " + letter + ".");
+	}
+
+	public void stringExample() {
+
+		String word1 = "Java";
+		String word2 = new String("Java");
+
+		// Comparison A
+		if (word1 == word2) {
+			System.out.println("A is True");
+		} else {
+			System.out.println("A is False");
+		}
+
+		// Comparison B
+		if (word1.equals(word2)) {
+			System.out.println("B is True");
+		} else {
+			System.out.println("B is False");
+		}
+	}
+
+	public void typeCastingJava() {
+//		Widening Casting: Implicit Type Conversion in Java.
+		System.out.println("Implicit Type Conversion In Java");
+		byte b = 56;
+		double d = b;
+		System.out.println("Byte To Double: (" + b + " = " + d + ")");
+
+//		Narrowing Casting: Explicit type Conversion in Java.
+		System.out.println("Explicit Type Conversion In Java");
+		b = ((byte) d);
+		System.out.println("Double to Byte: (" + d + " = " + b + ").");
 	}
 }

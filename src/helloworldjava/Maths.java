@@ -1,6 +1,6 @@
 package helloworldjava;
 
-public class Maths {
+public class Maths extends BasicMath {
 	private double answer;
 
 	public Maths() {
