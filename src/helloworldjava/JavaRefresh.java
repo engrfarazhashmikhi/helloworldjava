@@ -1,6 +1,33 @@
 package helloworldjava;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
+
 public class JavaRefresh extends Maths {
+	public void checkDrivingStatus() {
+		short yourAge, license;
+		yourAge = license = 0;
+		String statement = ("Enter your age: ");
+		Scanner s = new Scanner(System.in);
+		System.out.println(statement);
+		yourAge = Short.parseShort(s.nextLine());
+		if (yourAge >= 18) {
+			statement = ("Do you have a LiCENSE?: ");
+			System.out.println(statement);
+			license = Short.parseShort(s.nextLine());
+			if (license > 0) {
+				statement = "You can DRIVE!";
+			} else {
+				statement = "Get DRIVING LIcense first!";
+			}
+		} else {
+			statement = "Go with the DRIVER! kid";
+		}
+		s.close();
+		System.out.println(statement);
+	}
+
 	public void dataTypesJava() {
 
 //		Java Primitive Variables:
@@ -61,6 +88,14 @@ public class JavaRefresh extends Maths {
 		}
 	}
 
+	public void javaDatesAndTime() {
+//		Java Dates and Time Library.
+		Date dT = new Date();
+		GregorianCalendar cal = new GregorianCalendar();
+		System.out.println("Today's Date: " + dT.toString());
+		System.out.println("Java Calander: " + cal.getTimeZone().getID().toString());
+	}
+
 	public void JavaLoops() {
 		short i, total;
 		i = total = 0;
@@ -91,6 +126,17 @@ public class JavaRefresh extends Maths {
 			}
 		}
 		System.out.format("%s %d%n", "Total: ", total);
+	}
+
+	public void javaOperators() {
+//		Ternary Operator
+//		short age = 16, check;
+//		check = (age < 18) ? age++ : age--;
+//		System.out.println(check + ", " + age);
+
+//		instance of Operator
+		System.out.format("%s", ("Wellcome" instanceof String));
+
 	}
 
 	public void JavaString() {
