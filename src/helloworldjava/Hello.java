@@ -6,9 +6,7 @@ public class Hello extends Functions {
 		// TODO Auto-generated method stub
 		try {
 			Hello hello = new Hello();
-//			hello.typeCastingJava();
-			hello.dataTypesJava();
-
+			System.out.print("ROI is: " + hello.returns_of_investement() + "/=");
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Error Occur: " + e.getMessage() + ".\n");
