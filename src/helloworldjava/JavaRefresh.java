@@ -63,17 +63,6 @@ public class JavaRefresh extends Maths {
 		}
 	}
 
-	public void doLoopExample() {
-
-		int count[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-		int len = count.length;
-		int loop = 0;
-		do {
-			System.out.println(count[loop]);
-			loop++;
-		} while (loop < len);
-	}
-
 	public void JavaArray() {
 		byte target, i;
 		byte[] score = { 85, 92, 78, 99, 64 };
@@ -97,35 +86,38 @@ public class JavaRefresh extends Maths {
 	}
 
 	public void JavaLoops() {
-		short i, total;
-		i = total = 0;
+		Functions fun = new Functions();
+		byte counter = 0;
+		byte counting[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+		byte leng = Byte.parseByte(String.valueOf(counting.length));
 
-		// Logic Breakdown:
-		// 1 / 2 = 0.5
-		// 2 / 2 = 1
-		// 3 / 2 = 1.5
-		// 4 / 2 = 2
-		// 5 / 2 = 2.5
-		// 6 / 2 = 3
-		// Even Calculation: (1+2+3) = (6)
-		// Odd Calculation: (0.5+1.5+2.5) = (4.5)
-
-		// Correct Logic Breakdown:
-		// 1 % 2 = 1
-		// 2 % 2 = 0
-		// 3 % 2 = 1
-		// 4 % 2 = 0
-		// 5 % 2 = 1
-		// 6 % 2 = 0
-		// Even Calculation: (2+4) = (06)
-		// Odd Calculation: (1+3+5) = (09)
-
-		for (i = 1; i <= 5; i++) {
-			if (i % 2 == 0) {
-				total += i;
-			}
+//		For Loop Example
+		fun.display("For Loop Example");
+		for (counter = 0; counter < leng; counter++) {
+			fun.display(counting[counter]);
 		}
-		System.out.format("%s %d%n", "Total: ", total);
+
+//		while loop example
+		fun.display("While Loop Example");
+		counter = Byte.parseByte(String.valueOf(leng - 1));
+		while (counter >= 0) {
+			fun.display(counting[counter]);
+			counter--;
+		}
+
+//		DO-While Loop Example
+		fun.display("DO-While Loop Example");
+		counter = 0;
+		do {
+			fun.display(counting[counter]);
+			counter++;
+		} while (counter <= leng - 1);
+
+//	For-in Loop Example
+		fun.display("For-in Loop Example");
+		for (Byte b : counting) {
+			fun.display(b);
+		}
 	}
 
 	public void javaOperators() {
@@ -155,6 +147,30 @@ public class JavaRefresh extends Maths {
 																		// have same address.
 		System.out.println(myCity.toLowerCase().equals(city.toLowerCase())); // returns (true) because Two Different
 																				// Objects have Same Text.
+	}
+
+	public void javaSwitch() {
+		String[] drinks = { "Coffee", "Chai", "Cold Drink" };
+		Functions fun = new Functions();
+		fun.display("What would like to have?");
+		fun.display("1: Chai, 2: Cold Drink, 3: Coffee");
+		byte option = 0;
+		String statement = "";
+		switch (option) {
+		case 1: {
+			statement = "Here is your " + drinks[option];
+			break;
+		}
+		case 2: {
+			statement = "Here is your " + drinks[option];
+		}
+		case 3: {
+			statement = "Here is your " + drinks[option];
+		}
+		default:
+			throw new IllegalArgumentException("Woooo, We didn't SERVE THAT!" + option);
+		}
+		fun.display(statement);
 	}
 
 	public void nonPrimitiveTypes() {
