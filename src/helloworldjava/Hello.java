@@ -5,8 +5,13 @@ public class Hello extends Functions {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			Hello hello = new Hello();
-			System.out.print("ROI is: " + hello.returns_of_investement() + "/=");
+			Employee emp = new Employee("Joe Deo");
+			emp.setSalary(50000);
+			emp.setDesignation("Computer Hacker");
+			emp.returnEmployeeDetails();
+			emp.eat();
+			emp.walk();
+			emp.talk();
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Error Occur: " + e.getMessage() + ".\n");
