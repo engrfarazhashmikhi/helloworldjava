@@ -64,17 +64,27 @@ public class JavaRefresh extends Maths {
 	}
 
 	public void JavaArray() {
-		byte target, i;
-		byte[] score = { 85, 92, 78, 99, 64 };
-		target = 99;
-		i = 0;
-		for (i = 0; i <= (score.length - 1); i++) {
-			if (score[i] == target) {
-				System.out.println(target + " is at position: " + i);
-				break;
+//		byte target, i;
+//		byte[] score = { 85, 92, 78, 99, 64 };
+//		target = 99;
+//		i = 0;
+//		for (i = 0; i <= (score.length - 1); i++) {
+//			if (score[i] == target) {
+//				System.out.println(target + " is at position: " + i);
+//				break;
 //				continue;
-			}
-		}
+//			}
+//		}
+		char[] myCountry = new char[8];
+		myCountry[0] = 'P';
+		myCountry[1] = 'A';
+		myCountry[2] = 'K';
+		myCountry[3] = 'I';
+		myCountry[4] = 'S';
+		myCountry[5] = 'T';
+		myCountry[6] = 'A';
+		myCountry[7] = 'N';
+		System.out.print(myCountry);
 	}
 
 	public void javaDatesAndTime() {
@@ -83,6 +93,18 @@ public class JavaRefresh extends Maths {
 		GregorianCalendar cal = new GregorianCalendar();
 		System.out.println("Today's Date: " + dT.toString());
 		System.out.println("Java Calander: " + cal.getTimeZone().getID().toString());
+	}
+
+	public void JavaException() throws ArrayIndexOutOfBoundsException {
+		System.out.println("JavaRefresh.JavaException()");
+		try {
+			byte[] counting = new byte[10];
+			System.out.format("%d", counting);
+			throw new ArrayIndexOutOfBoundsException("INDEX NOT FOUND");
+//			System.out.print(counting[11]);
+		} catch (Exception e) {
+			System.out.println("Errr: " + e.toString());
+		}
 	}
 
 	public void JavaLoops() {
@@ -131,7 +153,7 @@ public class JavaRefresh extends Maths {
 
 	}
 
-	public void JavaString() {
+	public void JavaString() throws MyException {
 
 		String myCountry = "PAKISTAN";
 		String country = "Pakistan";
@@ -147,6 +169,7 @@ public class JavaRefresh extends Maths {
 																		// have same address.
 		System.out.println(myCity.toLowerCase().equals(city.toLowerCase())); // returns (true) because Two Different
 																				// Objects have Same Text.
+		throw new MyException(myCity + " " + myCountry);
 	}
 
 	public void javaSwitch() {

@@ -5,17 +5,15 @@ public class Hello extends Functions {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			Employee emp = new Employee("Joe Deo");
-			emp.setSalary(50000);
-			emp.setDesignation("Computer Hacker");
-			emp.returnEmployeeDetails();
-			emp.eat();
-			emp.walk();
-			emp.talk();
-		} catch (Exception e) {
+			JavaRefresh refresh = new JavaRefresh();
+			refresh.JavaString();
+
+		} catch (MyException e) {
 			// TODO: handle exception
-			System.out.println("Error Occur: " + e.getMessage() + ".\n");
-			System.err.println("Error Stack: " + e.getStackTrace() + ".\n");
+			System.out.println("Custom Exception: " + e.getGreetings().toString());
+			System.out.println("Errr: " + e.toString());
+		} finally {
+			System.gc();
 		}
 	}
 
