@@ -7,7 +7,7 @@ package helloworldjava;
  *
  */
 public interface BasicFunctions {
-	public String start();
+	String start();
 
-	public String stop();
+	String stop();
 }

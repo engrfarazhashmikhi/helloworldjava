@@ -9,10 +9,8 @@ public class Functions extends JavaRefresh implements BasicFunctions {
 	Scanner scans;
 	String status;
 
-	public double calcuateNetProfit(double revenue, double expenses) {
-//		Net Profit Formula: (Total Revenue - Total Expenses)
-		double Net_Profit = (revenue - expenses);
-		return Net_Profit;
+	public double calcuateNetProfit(final double revenue, final double expenses) {
+		return revenue - expenses;
 	}
 
 	public void checkAccess() {
@@ -20,48 +18,47 @@ public class Functions extends JavaRefresh implements BasicFunctions {
 //        System.out.println(rating); // Line D, Causes "COMPILE TIME ERROR" because "NO VARIABLE" of named "RATING" defined in this "METHOD"!
 	}
 
-	public void display(Object obj) {
+	public void display(final Object obj) {
 		System.out.println(obj);
 	}
 
 	public double returns_of_investement() {
 //		ROI	Formula: (Net_Profit / Investment * 100)
 		scans = new Scanner(System.in);
-		double Net_Profit = (this.calcuateNetProfit(Double.parseDouble(this.userInput("Enter Revenue Amount: ", scans)),
-				Double.parseDouble(this.userInput("Enter Expenses Amount: ", scans))));
-		double Total_Investment = Double.parseDouble(this.userInput("Enter Investment Amount: ", scans));
-		double ROI = ((Net_Profit / Total_Investment) * 100);
-		return ROI;
+		final var Net_Profit = calcuateNetProfit(Double.parseDouble(userInput(Messages.getString("Functions.0"), scans)), //$NON-NLS-1$
+				Double.parseDouble(userInput(Messages.getString("Functions.1"), scans))); //$NON-NLS-1$
+		final var Total_Investment = Double.parseDouble(userInput(Messages.getString("Functions.2"), scans)); //$NON-NLS-1$
+		return Net_Profit / Total_Investment * 100;
 	}
 
 	@Override
 	public String start() {
-		status = "STARTED";
+		status = Messages.getString("Functions.3"); //$NON-NLS-1$
 		return status;
 	}
 
 	@Override
 	public String stop() {
-		status = "STOPPED";
+		status = Messages.getString("Functions.4"); //$NON-NLS-1$
 		return status;
 	}
 
 	public void updateProfile() {
 		// Local variable
-		double rating = 4.5;
+		final var rating = 4.5;
 
 		System.out.println(age); // Line A
 		System.out.println(rating); // Line B
 	}
 
-	public String userInput(String statement, Scanner scan) {
+	public String userInput(final String statement, final Scanner scan) {
 		System.out.println(statement);
-		String getUserInput = "";
+		var getUserInput = Messages.getString("Functions.5"); //$NON-NLS-1$
 		try {
 			getUserInput = scan.nextLine();
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			// TODO: handle exception
-			getUserInput = (e.getMessage());
+			getUserInput = e.getMessage();
 		}
 		return getUserInput;
 

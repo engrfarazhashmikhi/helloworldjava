@@ -1,25 +1,25 @@
 package helloworldjava;
 
 public class Person {
-	private String personName;
+	private final String personName;
 
-	Person(String yourName) {
-		this.personName = yourName.trim();
+	Person(final String yourName) {
+		personName = yourName.trim();
 	}
 
 	public void eat() {
-		System.out.println(this.personName + " can Eat.");
+		System.out.println(personName + Messages.getString("Person.0")); //$NON-NLS-1$
 	}
 
 	public String getPersonName() {
-		return this.personName;
+		return personName;
 	}
 
 	public void talk() {
-		System.out.println(this.personName + " can Talk.");
+		System.out.println(personName + Messages.getString("Person.1")); //$NON-NLS-1$
 	}
 
 	public void walk() {
-		System.out.println(this.personName + " can Walk.");
+		System.out.println(personName + Messages.getString("Person.2")); //$NON-NLS-1$
 	}
 }

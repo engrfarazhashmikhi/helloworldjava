@@ -8,12 +8,12 @@ public abstract class Payments implements BasicFunctions {
 	}
 
 	public String CashIn() {
-		cash = "CASH Received";
+		cash = Messages.getString("Payments.0"); //$NON-NLS-1$
 		return cash;
 	}
 
 	public String CashOut() {
-		cash = "Change Paid";
+		cash = Messages.getString("Payments.1"); //$NON-NLS-1$
 		return cash;
 	}
 }

@@ -5,24 +5,24 @@ public class Banking extends Maths {
 	private double accountBalance = 0;
 	private int accountNumber = 0;
 
-	public Banking(int accountNumber, double accountBalance) {
+	public Banking(final int accountNumber, final double accountBalance) {
 		// TODO Auto-generated constructor stub
 		this.accountBalance = accountBalance;
-		this.setAccountNumber(accountNumber);
+		setAccountNumber(accountNumber);
 	}
 
-	public double creditBalance(double addBalance) {
-		this.accountBalance = addition(this.accountBalance, addBalance);
-		return this.accountBalance;
+	public double creditBalance(final double addBalance) {
+		accountBalance = addition(accountBalance, addBalance);
+		return accountBalance;
 	}
 
-	public double debitBalance(double cashAmount) {
-		double withdraw = 0.00;
-		if (this.accountBalance >= cashAmount) {
+	public double debitBalance(final double cashAmount) {
+		var withdraw = 0.00;
+		if (accountBalance >= cashAmount) {
 			withdraw = cashAmount;
-			this.accountBalance = substraction(this.accountBalance, withdraw);
+			accountBalance = substraction(accountBalance, withdraw);
 		} else {
-			withdraw = this.accountBalance;
+			withdraw = accountBalance;
 		}
 		return withdraw;
 	}
@@ -37,11 +37,11 @@ public class Banking extends Maths {
 	/**
 	 * @param accountNumber the accountNumber to set
 	 */
-	public void setAccountNumber(int accountNumber) {
+	public void setAccountNumber(final int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 
 	public double showBalance() {
-		return this.accountBalance;
+		return accountBalance;
 	}
 }

@@ -4,28 +4,28 @@ public class Employee extends Person {
 	private String designation;
 	private double salary;
 
-	public Employee(String empName) {
+	public Employee(final String empName) {
 		super(empName.trim());
 	}
 
 	public String getDesignation() {
-		return this.designation;
+		return designation;
 	}
 
 	public double getSalary() {
-		return this.salary;
+		return salary;
 	}
 
 	public void returnEmployeeDetails() {
-		System.out.println("Mr. " + getPersonName() + " has a Designation of " + designation + " with a Salary of "
-				+ salary + ".");
+		System.out.println(Messages.getString("Employee.0") + getPersonName() + Messages.getString("Employee.1") + designation + Messages.getString("Employee.2") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				+ salary + Messages.getString("Employee.3")); //$NON-NLS-1$
 	}
 
-	public void setDesignation(String des) {
-		this.designation = des.trim();
+	public void setDesignation(final String des) {
+		designation = des.trim();
 	}
 
-	public void setSalary(double sal) {
-		this.salary = sal;
+	public void setSalary(final double sal) {
+		salary = sal;
 	}
 }

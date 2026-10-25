@@ -11,21 +11,21 @@ public class JavaRefresh extends Maths {
 	public void checkDrivingStatus() {
 		short yourAge, license;
 		yourAge = license = 0;
-		String statement = ("Enter your age: ");
-		Scanner s = new Scanner(System.in);
+		var statement = Messages.getString("JavaRefresh.0"); //$NON-NLS-1$
+		final var s = new Scanner(System.in);
 		System.out.println(statement);
 		yourAge = Short.parseShort(s.nextLine());
 		if (yourAge >= 18) {
-			statement = ("Do you have a LiCENSE?: ");
+			statement = Messages.getString("JavaRefresh.1"); //$NON-NLS-1$
 			System.out.println(statement);
 			license = Short.parseShort(s.nextLine());
 			if (license > 0) {
-				statement = "You can DRIVE!";
+				statement = Messages.getString("JavaRefresh.2"); //$NON-NLS-1$
 			} else {
-				statement = "Get DRIVING LIcense first!";
+				statement = Messages.getString("JavaRefresh.3"); //$NON-NLS-1$
 			}
 		} else {
-			statement = "Go with the DRIVER! kid";
+			statement = Messages.getString("JavaRefresh.4"); //$NON-NLS-1$
 		}
 		s.close();
 		System.out.println(statement);
@@ -35,72 +35,72 @@ public class JavaRefresh extends Maths {
 
 //		Java Primitive Variables:
 
-		System.out.println("Java Primitive Variables");
+		System.out.println(Messages.getString("JavaRefresh.5")); //$NON-NLS-1$
 
 		byte b = 28;
-		short s = 28;
-		long l = 28L;
-		int i = 28;
-		float f = 28.00f;
-		double d = 28D;
-		char c = 'P';
-		boolean bool = true;
+		final short s = 28;
+		final var l = 28L;
+		final var i = 28;
+		final var f = 28.00f;
+		final var d = 28D;
+		final var c = 'P';
+		final var bool = true;
 
-		System.out.println("Byte Value: " + (b) + ".");
-		System.out.println("Short Value: " + (s) + ".");
-		System.out.println("Long Value: " + (l) + ".");
-		System.out.println("Int Value: " + (i) + ".");
-		System.out.println("Float Value: " + (f) + ".");
-		System.out.println("Double Value: " + (d) + ".");
-		System.out.println("Char Value: " + (c) + ".");
-		System.out.println("Boolean Value: " + (bool) + ".");
+		System.out.println(Messages.getString("JavaRefresh.6") + b + Messages.getString("JavaRefresh.7")); //$NON-NLS-1$ //$NON-NLS-2$
+		System.out.println(Messages.getString("JavaRefresh.8") + s + Messages.getString("JavaRefresh.9")); //$NON-NLS-1$ //$NON-NLS-2$
+		System.out.println(Messages.getString("JavaRefresh.10") + l + Messages.getString("JavaRefresh.11")); //$NON-NLS-1$ //$NON-NLS-2$
+		System.out.println(Messages.getString("JavaRefresh.12") + i + Messages.getString("JavaRefresh.13")); //$NON-NLS-1$ //$NON-NLS-2$
+		System.out.println(Messages.getString("JavaRefresh.14") + f + Messages.getString("JavaRefresh.15")); //$NON-NLS-1$ //$NON-NLS-2$
+		System.out.println(Messages.getString("JavaRefresh.16") + d + Messages.getString("JavaRefresh.17")); //$NON-NLS-1$ //$NON-NLS-2$
+		System.out.println(Messages.getString("JavaRefresh.18") + c + Messages.getString("JavaRefresh.19")); //$NON-NLS-1$ //$NON-NLS-2$
+		System.out.println(Messages.getString("JavaRefresh.20") + bool + Messages.getString("JavaRefresh.21")); //$NON-NLS-1$ //$NON-NLS-2$
 
-		System.out.println("Java NoN-Primitive Variables");
+		System.out.println(Messages.getString("JavaRefresh.22")); //$NON-NLS-1$
 
-		String str = "PAKISTAN";
-		byte counting[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-		System.out.println("Sting s: " + str);
-		System.out.println("INT Array:");
+		final var str = Messages.getString("JavaRefresh.23"); //$NON-NLS-1$
+		final byte counting[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+		System.out.println(Messages.getString("JavaRefresh.24") + str); //$NON-NLS-1$
+		System.out.println(Messages.getString("JavaRefresh.25")); //$NON-NLS-1$
 		for (b = 0; b < counting.length; b++) {
-			System.out.format("%d%n", counting[b]);
+			System.out.format(Messages.getString("JavaRefresh.26"), counting[b]); //$NON-NLS-1$
 		}
 	}
 
 	public void hashSetExample() {
-		HashSet<String> myCars = new HashSet<>();
-		myCars.add("Suzuki FX");
-		myCars.add("Honda Civic");
-		myCars.add("Toyota Land Crusier");
-		myCars.add("Suzuki Alto");
-		myCars.add("Suzuki FX");
-		myCars.add("Suzuki Alto");
-		System.out.format("%d%n", myCars.size());
-		System.out.format("%s%n", myCars);
-		boolean check = myCars.contains("Suzuki Alto");
+		final var myCars = new HashSet<String>();
+		myCars.add(Messages.getString("JavaRefresh.27")); //$NON-NLS-1$
+		myCars.add(Messages.getString("JavaRefresh.28")); //$NON-NLS-1$
+		myCars.add(Messages.getString("JavaRefresh.29")); //$NON-NLS-1$
+		myCars.add(Messages.getString("JavaRefresh.30")); //$NON-NLS-1$
+		myCars.add(Messages.getString("JavaRefresh.31")); //$NON-NLS-1$
+		myCars.add(Messages.getString("JavaRefresh.32")); //$NON-NLS-1$
+		System.out.format(Messages.getString("JavaRefresh.33"), myCars.size()); //$NON-NLS-1$
+		System.out.format(Messages.getString("JavaRefresh.34"), myCars); //$NON-NLS-1$
+		final var check = myCars.contains(Messages.getString("JavaRefresh.35")); //$NON-NLS-1$
 		System.out.println(check);
-		myCars.remove("Suzuki FX");
+		myCars.remove(Messages.getString("JavaRefresh.36")); //$NON-NLS-1$
 		System.out.println(myCars);
-		System.out.format("%s%n", myCars.size());
-		System.out.format("%.2f%n", Float.parseFloat(String.valueOf(myCars.size())));
-		for (String s : myCars) {
-			System.out.format("%s%n", s);
+		System.out.format(Messages.getString("JavaRefresh.37"), myCars.size()); //$NON-NLS-1$
+		System.out.format(Messages.getString("JavaRefresh.38"), Float.parseFloat(String.valueOf(myCars.size()))); //$NON-NLS-1$
+		for (final String s : myCars) {
+			System.out.format(Messages.getString("JavaRefresh.39"), s); //$NON-NLS-1$
 		}
 		myCars.clear();
-		System.out.format("%s%n", myCars);
+		System.out.format(Messages.getString("JavaRefresh.40"), myCars); //$NON-NLS-1$
 	}
 
 	public void JavaArray() {
 		byte target, i;
-		byte[] score = { 85, 92, 78, 99, 64 };
+		final byte[] score = { 85, 92, 78, 99, 64 };
 		target = 99;
 		i = 0;
-		for (i = 0; i <= (score.length - 1); i++) {
+		for (i = 0; i <= score.length - 1; i++) {
 			if (score[i] == target) {
-				System.out.println(target + " is at position: " + i);
+				System.out.println(target + Messages.getString("JavaRefresh.41") + i); //$NON-NLS-1$
 				continue;
 			}
 		}
-		char[] myCountry = new char[8];
+		final var myCountry = new char[8];
 		myCountry[0] = 'P';
 		myCountry[1] = 'A';
 		myCountry[2] = 'K';
@@ -114,37 +114,37 @@ public class JavaRefresh extends Maths {
 
 	public void javaDatesAndTime() {
 //		Java Dates and Time Library.
-		Date dT = new Date();
-		GregorianCalendar cal = new GregorianCalendar();
-		System.out.println("Today's Date: " + dT.toString());
-		System.out.println("Java Calander: " + cal.getTimeZone().getID().toString());
+		final var dT = new Date();
+		final var cal = new GregorianCalendar();
+		System.out.println(Messages.getString("JavaRefresh.42") + dT.toString()); //$NON-NLS-1$
+		System.out.println(Messages.getString("JavaRefresh.43") + cal.getTimeZone().getID().toString()); //$NON-NLS-1$
 	}
 
 	public void JavaException() throws ArrayIndexOutOfBoundsException {
-		System.out.println("JavaRefresh.JavaException()");
+		System.out.println(Messages.getString("JavaRefresh.44")); //$NON-NLS-1$
 		try {
-			byte[] counting = new byte[10];
-			System.out.format("%d", counting);
-			throw new ArrayIndexOutOfBoundsException("INDEX NOT FOUND");
-		} catch (Exception e) {
-			System.out.println("Errr: " + e.toString());
+			final var counting = new byte[10];
+			System.out.format(Messages.getString("JavaRefresh.45"), counting); //$NON-NLS-1$
+			throw new ArrayIndexOutOfBoundsException(Messages.getString("JavaRefresh.46")); //$NON-NLS-1$
+		} catch (final Exception e) {
+			System.out.println(Messages.getString("JavaRefresh.47") + e.toString()); //$NON-NLS-1$
 		}
 	}
 
 	public void JavaLoops() {
-		Functions fun = new Functions();
+		final var fun = new Functions();
 		byte counter = 0;
-		byte counting[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-		byte leng = Byte.parseByte(String.valueOf(counting.length));
+		final byte counting[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+		final var leng = Byte.parseByte(String.valueOf(counting.length));
 
 //		For Loop Example
-		fun.display("For Loop Example");
+		fun.display(Messages.getString("JavaRefresh.48")); //$NON-NLS-1$
 		for (counter = 0; counter < leng; counter++) {
 			fun.display(counting[counter]);
 		}
 
 //		while loop example
-		fun.display("While Loop Example");
+		fun.display(Messages.getString("JavaRefresh.49")); //$NON-NLS-1$
 		counter = Byte.parseByte(String.valueOf(leng - 1));
 		while (counter >= 0) {
 			fun.display(counting[counter]);
@@ -152,7 +152,7 @@ public class JavaRefresh extends Maths {
 		}
 
 //		DO-While Loop Example
-		fun.display("DO-While Loop Example");
+		fun.display(Messages.getString("JavaRefresh.50")); //$NON-NLS-1$
 		counter = 0;
 		do {
 			fun.display(counting[counter]);
@@ -160,8 +160,8 @@ public class JavaRefresh extends Maths {
 		} while (counter <= leng - 1);
 
 //	For-in Loop Example
-		fun.display("For-in Loop Example");
-		for (Byte b : counting) {
+		fun.display(Messages.getString("JavaRefresh.51")); //$NON-NLS-1$
+		for (final Byte b : counting) {
 			fun.display(b);
 		}
 	}
@@ -169,19 +169,19 @@ public class JavaRefresh extends Maths {
 	public void javaOperators() {
 //		Ternary Operator
 		short age = 16, check;
-		check = (age < 18) ? age++ : age--;
-		System.out.println(check + ", " + age);
+		check = age < 18 ? age++ : age--;
+		System.out.println(check + Messages.getString("JavaRefresh.52") + age); //$NON-NLS-1$
 //		instance of Operator
-		System.out.format("%s", ("Wellcome" instanceof String));
+		System.out.format(Messages.getString("JavaRefresh.53"), Messages.getString("JavaRefresh.54") instanceof String); //$NON-NLS-1$ //$NON-NLS-2$
 
 	}
 
 	public void JavaString() throws MyException {
 
-		String myCountry = "PAKISTAN";
-		String country = "Pakistan";
-		String myCity = new String("Karachi");
-		String city = new String("KARACHI");
+		final var myCountry = Messages.getString("JavaRefresh.55"); //$NON-NLS-1$
+		final var country = Messages.getString("JavaRefresh.56"); //$NON-NLS-1$
+		final var myCity = Messages.getString("JavaRefresh.57"); //$NON-NLS-1$
+		final var city = Messages.getString("JavaRefresh.58"); //$NON-NLS-1$
 
 		System.out.println(myCountry.toLowerCase() == country.toLowerCase()); // returns (false) because (Primitive
 																				// DataType).
@@ -192,62 +192,62 @@ public class JavaRefresh extends Maths {
 																		// have same address.
 		System.out.println(myCity.toLowerCase().equals(city.toLowerCase())); // returns (true) because Two Different
 																				// Objects have Same Text.
-		throw new MyException(myCity + " " + myCountry);
+		throw new MyException(myCity + Messages.getString("JavaRefresh.59") + myCountry); //$NON-NLS-1$
 	}
 
 	public void javaSwitch() {
-		String[] drinks = { "Coffee", "Chai", "Cold Drink" };
-		Functions fun = new Functions();
-		fun.display("What would like to have?");
-		fun.display("1: Chai, 2: Cold Drink, 3: Coffee");
-		byte option = 0;
-		String statement = "";
+		final String[] drinks = { Messages.getString("JavaRefresh.60"), Messages.getString("JavaRefresh.61"), Messages.getString("JavaRefresh.62") }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		final var fun = new Functions();
+		fun.display(Messages.getString("JavaRefresh.63")); //$NON-NLS-1$
+		fun.display(Messages.getString("JavaRefresh.64")); //$NON-NLS-1$
+		final byte option = 0;
+		var statement = Messages.getString("JavaRefresh.65"); //$NON-NLS-1$
 		switch (option) {
 		case 1: {
-			statement = "Here is your " + drinks[option];
+			statement = Messages.getString("JavaRefresh.66") + drinks[option]; //$NON-NLS-1$
 			break;
 		}
 		case 2: {
-			statement = "Here is your " + drinks[option];
+			statement = Messages.getString("JavaRefresh.67") + drinks[option]; //$NON-NLS-1$
 		}
 		case 3: {
-			statement = "Here is your " + drinks[option];
+			statement = Messages.getString("JavaRefresh.68") + drinks[option]; //$NON-NLS-1$
 		}
 		default:
-			throw new IllegalArgumentException("Woooo, We didn't SERVE THAT!" + option);
+			throw new IllegalArgumentException(Messages.getString("JavaRefresh.69") + option); //$NON-NLS-1$
 		}
 		fun.display(statement);
 	}
 
 	public void linkedHashSetExample() {
-		LinkedHashSet<Integer> mySet = new LinkedHashSet<>();
-		int counting[] = new int[10];
-		for (int i = 0; i <= (counting.length - 1); i++) {
+		final var mySet = new LinkedHashSet<Integer>();
+		final int counting[] = new int[10];
+		for (var i = 0; i <= counting.length - 1; i++) {
 			counting[i] = i;
-			for (int j = 0; j <= (i); j++) {
+			for (var j = 0; j <= i; j++) {
 				mySet.add(counting[j]);
 			}
 		}
-		System.out.format("%s%n", mySet);
+		System.out.format(Messages.getString("JavaRefresh.70"), mySet); //$NON-NLS-1$
 		mySet.remove(counting[0]);
-		System.out.format("%s%n", mySet);
-		boolean check = mySet.contains(counting[6]);
-		System.out.format("%s:%d%n", check, counting[6]);
-		for (Integer k : mySet) {
-			System.out.format("%s%n", k);
+		System.out.format(Messages.getString("JavaRefresh.71"), mySet); //$NON-NLS-1$
+		final var check = mySet.contains(counting[6]);
+		System.out.format(Messages.getString("JavaRefresh.72"), check, counting[6]); //$NON-NLS-1$
+		for (final Integer k : mySet) {
+			System.out.format(Messages.getString("JavaRefresh.73"), k); //$NON-NLS-1$
 		}
-		int getSize = mySet.size();
-		System.out.format("%s%d%n", "Size: ", getSize);
+		final var getSize = mySet.size();
+		System.out.format(Messages.getString("JavaRefresh.74"), Messages.getString("JavaRefresh.75"), getSize); //$NON-NLS-1$ //$NON-NLS-2$
 		mySet.clear();
-		System.out.format("%s%n", mySet);
+		System.out.format(Messages.getString("JavaRefresh.76"), mySet); //$NON-NLS-1$
 	}
 
 	public void nonPrimitiveTypes() {
 		// Non Primitives DataTypes are programmer defined, except String and Array
 		// DataTypes.
-		String textStatement = "I Love Java Programming Language.";
-		short counting[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-		char myCountry[] = { 'P', 'A', 'K', 'I', 'S', 'T', 'A', 'N' };
+		final var textStatement = Messages.getString("JavaRefresh.77"); //$NON-NLS-1$
+		final short counting[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+		final char myCountry[] = { 'P', 'A', 'K', 'I', 'S', 'T', 'A', 'N' };
 		short i = 0;
 		for (i = 0; i < counting.length; i++) {
 			System.out.println(counting[i]);
@@ -259,100 +259,100 @@ public class JavaRefresh extends Maths {
 		}
 		i = 0;
 		do {
-			System.out.println(i + ":" + textStatement);
+			System.out.println(i + Messages.getString("JavaRefresh.78") + textStatement); //$NON-NLS-1$
 			i++;
 		} while (i < textStatement.length());
 	}
 
 	public void primitiveTypes() {
 //		There are Eight (08) Premitive Dataypes in Java.
-		byte age = 127; // (08) Bits called 1 Byte
-		System.out.println("Byte Age: " + age + ".");
-		short score = 32767; // (02) Bytes: 16 Bits
-		System.out.println("Short Score: " + score + ".");
-		int salary = 2100000000; // (04) Bytes: 32 Bits.
-		System.out.println("Integer Salary: " + salary + ".");
-		long distance = 2100000000l; // (08) Bytes: 64 Bits.
-		System.out.println("Long Distance: " + distance + ".");
-		float PI = 3.14f; // (04) Bytes: 32 Bits. SIngle Precision Fractional.
-		System.out.println("Float PI: " + PI + ".");
-		double price = 44.33; // (08) Bytes: 64 Bits. Double Precision Fractional.
-		System.out.println("Double Price: " + price + ".");
-		boolean weekend = true; // (01) Bit. Only (True or False).
-		System.out.println("Boolean Weekend: " + weekend + ".");
-		char letter = 'P'; // (02) Bytes: 16 Bits, Unicode Characters, SIngle Quoted.
-		System.out.println("Char Letter: " + letter + ".");
+		final byte age = 127; // (08) Bits called 1 Byte
+		System.out.println(Messages.getString("JavaRefresh.79") + age + Messages.getString("JavaRefresh.80")); //$NON-NLS-1$ //$NON-NLS-2$
+		final short score = 32767; // (02) Bytes: 16 Bits
+		System.out.println(Messages.getString("JavaRefresh.81") + score + Messages.getString("JavaRefresh.82")); //$NON-NLS-1$ //$NON-NLS-2$
+		final var salary = 2100000000; // (04) Bytes: 32 Bits.
+		System.out.println(Messages.getString("JavaRefresh.83") + salary + Messages.getString("JavaRefresh.84")); //$NON-NLS-1$ //$NON-NLS-2$
+		final var distance = 2100000000L; // (08) Bytes: 64 Bits.
+		System.out.println(Messages.getString("JavaRefresh.85") + distance + Messages.getString("JavaRefresh.86")); //$NON-NLS-1$ //$NON-NLS-2$
+		final var PI = 3.14f; // (04) Bytes: 32 Bits. SIngle Precision Fractional.
+		System.out.println(Messages.getString("JavaRefresh.87") + PI + Messages.getString("JavaRefresh.88")); //$NON-NLS-1$ //$NON-NLS-2$
+		final var price = 44.33; // (08) Bytes: 64 Bits. Double Precision Fractional.
+		System.out.println(Messages.getString("JavaRefresh.89") + price + Messages.getString("JavaRefresh.90")); //$NON-NLS-1$ //$NON-NLS-2$
+		final var weekend = true; // (01) Bit. Only (True or False).
+		System.out.println(Messages.getString("JavaRefresh.91") + weekend + Messages.getString("JavaRefresh.92")); //$NON-NLS-1$ //$NON-NLS-2$
+		final var letter = 'P'; // (02) Bytes: 16 Bits, Unicode Characters, SIngle Quoted.
+		System.out.println(Messages.getString("JavaRefresh.93") + letter + Messages.getString("JavaRefresh.94")); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	public void stringExample() {
 
-		String word1 = "Java";
-		String word2 = new String("Java");
+		final var word1 = Messages.getString("JavaRefresh.95"); //$NON-NLS-1$
+		final var word2 = Messages.getString("JavaRefresh.96"); //$NON-NLS-1$
 
 		// Comparison A
 		if (word1 == word2) {
-			System.out.println("A is True");
+			System.out.println(Messages.getString("JavaRefresh.97")); //$NON-NLS-1$
 		} else {
-			System.out.println("A is False");
+			System.out.println(Messages.getString("JavaRefresh.98")); //$NON-NLS-1$
 		}
 
 		// Comparison B
 		if (word1.equals(word2)) {
-			System.out.println("B is True");
+			System.out.println(Messages.getString("JavaRefresh.99")); //$NON-NLS-1$
 		} else {
-			System.out.println("B is False");
+			System.out.println(Messages.getString("JavaRefresh.100")); //$NON-NLS-1$
 		}
 	}
 
 	public void treeSetExample() {
-		TreeSet<String> myTree = new TreeSet<>();
-		myTree.add("Apple Tree");
-		myTree.add("Mango Tree");
-		myTree.add("Guava Tree");
-		System.out.format("%s%n", myTree);
-		boolean check = myTree.contains("Peach Tree");
+		final var myTree = new TreeSet<String>();
+		myTree.add(Messages.getString("JavaRefresh.101")); //$NON-NLS-1$
+		myTree.add(Messages.getString("JavaRefresh.102")); //$NON-NLS-1$
+		myTree.add(Messages.getString("JavaRefresh.103")); //$NON-NLS-1$
+		System.out.format(Messages.getString("JavaRefresh.104"), myTree); //$NON-NLS-1$
+		final var check = myTree.contains(Messages.getString("JavaRefresh.105")); //$NON-NLS-1$
 		if (check) {
-			System.out.format("%s%n", check);
+			System.out.format(Messages.getString("JavaRefresh.106"), check); //$NON-NLS-1$
 		} else {
-			System.out.format("%s %s%n", "Tree NOT FOUND: ", check);
+			System.out.format(Messages.getString("JavaRefresh.107"), Messages.getString("JavaRefresh.108"), check); //$NON-NLS-1$ //$NON-NLS-2$
 		}
-		myTree.remove("Apple Tree");
-		System.out.format("%s%n", myTree);
-		myTree.add("Peach Tree");
-		System.out.format("%s%n", myTree);
+		myTree.remove(Messages.getString("JavaRefresh.109")); //$NON-NLS-1$
+		System.out.format(Messages.getString("JavaRefresh.110"), myTree); //$NON-NLS-1$
+		myTree.add(Messages.getString("JavaRefresh.111")); //$NON-NLS-1$
+		System.out.format(Messages.getString("JavaRefresh.112"), myTree); //$NON-NLS-1$
 		myTree.clear();
-		System.out.format("%s%n", myTree);
-		int totalTrees = myTree.size();
+		System.out.format(Messages.getString("JavaRefresh.113"), myTree); //$NON-NLS-1$
+		var totalTrees = myTree.size();
 		if (totalTrees > 0) {
-			System.out.format("%s%n", "Plant More Trees.");
+			System.out.format(Messages.getString("JavaRefresh.114"), Messages.getString("JavaRefresh.115")); //$NON-NLS-1$ //$NON-NLS-2$
 		} else {
-			System.out.format("%s%n", "Start Trees PLANTATION.");
+			System.out.format(Messages.getString("JavaRefresh.116"), Messages.getString("JavaRefresh.117")); //$NON-NLS-1$ //$NON-NLS-2$
 		}
-		myTree.add("Apple Tree");
-		myTree.add("Peach Tree");
-		myTree.add("Mango Tree");
-		for (String tree : myTree) {
-			System.out.format("%s%n", tree);
+		myTree.add(Messages.getString("JavaRefresh.118")); //$NON-NLS-1$
+		myTree.add(Messages.getString("JavaRefresh.119")); //$NON-NLS-1$
+		myTree.add(Messages.getString("JavaRefresh.120")); //$NON-NLS-1$
+		for (final String tree : myTree) {
+			System.out.format(Messages.getString("JavaRefresh.121"), tree); //$NON-NLS-1$
 		}
 		totalTrees = myTree.size();
 		if (totalTrees > 0) {
-			System.out.format("%s%n", "Plant More Trees.");
+			System.out.format(Messages.getString("JavaRefresh.122"), Messages.getString("JavaRefresh.123")); //$NON-NLS-1$ //$NON-NLS-2$
 		} else {
-			System.out.format("%s%n", "Start Trees PLANTATION.");
+			System.out.format(Messages.getString("JavaRefresh.124"), Messages.getString("JavaRefresh.125")); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 	}
 
 	public void typeCastingJava() {
 //		Widening Casting: Implicit Type Conversion in Java.
-		System.out.println("Implicit Type Conversion In Java");
+		System.out.println(Messages.getString("JavaRefresh.126")); //$NON-NLS-1$
 		byte b = 56;
-		double d = b;
-		System.out.println("Byte To Double: (" + b + " = " + d + ")");
+		final double d = b;
+		System.out.println(Messages.getString("JavaRefresh.127") + b + Messages.getString("JavaRefresh.128") + d + Messages.getString("JavaRefresh.129")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 //		Narrowing Casting: Explicit type Conversion in Java.
-		System.out.println("Explicit Type Conversion In Java");
-		b = ((byte) d);
-		System.out.println("Double to Byte: (" + d + " = " + b + ").");
+		System.out.println(Messages.getString("JavaRefresh.130")); //$NON-NLS-1$
+		b = (byte) d;
+		System.out.println(Messages.getString("JavaRefresh.131") + d + Messages.getString("JavaRefresh.132") + b + Messages.getString("JavaRefresh.133")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 }

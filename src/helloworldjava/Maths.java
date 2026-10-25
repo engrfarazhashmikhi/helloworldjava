@@ -5,30 +5,30 @@ public class Maths extends BasicMath {
 
 	public Maths() {
 		// TODO Auto-generated constructor stub
-		this.answer = 0;
+		answer = 0;
 	}
 
-	public double addition(double val1, double val2) {
+	public double addition(final double val1, final double val2) {
 		answer = val1 + val2;
 		return answer;
 	}
 
-	public double division(double val1, double val2) {
+	public double division(final double val1, final double val2) {
 		answer = val1 / val2;
 		return answer;
 	}
 
-	public double multiplication(double val1, double val2) {
+	public double multiplication(final double val1, final double val2) {
 		answer = val1 * val2;
 		return answer;
 	}
 
-	public double remainder(double val1, double val2) {
+	public double remainder(final double val1, final double val2) {
 		answer = val1 % val2;
 		return answer;
 	}
 
-	public double substraction(double val1, double val2) {
+	public double substraction(final double val1, final double val2) {
 		answer = val1 - val2;
 		return answer;
 	}
