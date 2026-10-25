@@ -2,6 +2,7 @@ package helloworldjava;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
@@ -354,5 +355,29 @@ public class JavaRefresh extends Maths {
 		System.out.println(Messages.getString("JavaRefresh.130")); //$NON-NLS-1$
 		b = (byte) d;
 		System.out.println(Messages.getString("JavaRefresh.131") + d + Messages.getString("JavaRefresh.132") + b + Messages.getString("JavaRefresh.133")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+	}
+	public void hashMapExample() {
+		HashMap<String,String> cityCodes = new HashMap<String, String>();
+		int getSize = 0;
+		cityCodes.put("KHI","karachi City");
+		cityCodes.put("LHE","Lahore City");
+		cityCodes.put("ISB","Islamabad City");
+		getSize = cityCodes.size();
+		System.out.format("%s %d %n",cityCodes, getSize);
+		String myCity = cityCodes.get("KHI");
+		System.out.format("%s%n", myCity.toUpperCase());
+		cityCodes.remove("LHE");
+		getSize = cityCodes.size();
+		System.out.format("%s %d %n",cityCodes, getSize);
+		cityCodes.clear();
+		getSize = cityCodes.size();
+		System.out.format("%s %d %n",cityCodes, getSize);
+		cityCodes.put("KHI".toLowerCase(),"karachi City".toLowerCase());
+		cityCodes.put("LHE".toLowerCase(),"Lahore City".toLowerCase());
+		cityCodes.put("ISB".toLowerCase(),"Islamabad City".toLowerCase());
+		for(String city: cityCodes.keySet()) {
+			System.out.format("%s: %s%n",city.toUpperCase(), cityCodes.get(city).toUpperCase());
+		}
+
 	}
 }
