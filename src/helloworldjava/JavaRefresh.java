@@ -1,13 +1,14 @@
 package helloworldjava;
 
 import java.util.Date;
+
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.TreeSet;
-
+import java.util.HashMap;
 public class JavaRefresh extends Maths {
 	public void checkDrivingStatus() {
 		short yourAge, license;
@@ -378,6 +379,29 @@ public class JavaRefresh extends Maths {
 		for(String city: cityCodes.keySet()) {
 			System.out.format("%s: %s%n",city.toUpperCase(), cityCodes.get(city).toUpperCase());
 		}
-
+	}
+	public void treeMapExample() {
+		HashMap<String, Byte> grades = new HashMap<String, Byte>(); 
+		grades.put("A-Grade", (byte)90);
+		grades.put("B-Grade", (byte)80);
+		grades.put("C-Grade", (byte)70);
+		System.out.println(grades);
+		byte getSize = (byte) grades.size();
+		System.out.println("Total GRADES: " + getSize);
+		byte getPercentage = grades.get("B-Grade");
+		System.out.println("%tage: " + getPercentage);
+		grades.remove("C-Grade");
+		System.out.println(grades);
+		grades.put("D-Grade", (byte)60);
+		grades.put("C-Grade", (byte)70);
+		getSize = (byte)grades.size();
+		System.out.println("Total GRADES: " + getSize);
+		for(String grade: grades.keySet()) {
+			System.out.println(grades.get(grade) + " = " + grade);
+		}
+		grades.clear();
+		System.out.println(grades);
+		getSize = (byte)grades.size();
+		System.out.println("Total GRADES: " + getSize);
 	}
 }
