@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -403,5 +404,29 @@ public class JavaRefresh extends Maths {
 		System.out.println(grades);
 		getSize = (byte)grades.size();
 		System.out.println("Total GRADES: " + getSize);
+	}
+	public void linkedHashMapExample() {
+		LinkedHashMap<String, String> capitalCITIES = new LinkedHashMap<String, String>();
+		int getSize = 0;
+		capitalCITIES.put("srilanka".toLowerCase(), "Sri Jayawardenepura Kotte".toLowerCase());
+		capitalCITIES.put("Indonesia".toLowerCase(), "Jakarta".toLowerCase());
+		getSize = capitalCITIES.size();
+		System.out.format("%d:%s %n",getSize, capitalCITIES);
+		String getCity = capitalCITIES.get("Indonesia".toLowerCase()).toUpperCase();
+		System.out.format("%s%n",getCity);
+		capitalCITIES.remove("srilanka".toLowerCase());
+		getSize = capitalCITIES.size();
+		System.out.format("%d:%s %n",getSize, capitalCITIES);
+		capitalCITIES.clear();
+		getSize = capitalCITIES.size();
+		System.out.format("%d:%s %n",getSize, capitalCITIES);
+		capitalCITIES.put("iceland".toUpperCase(), "Reykjav".toUpperCase());
+		capitalCITIES.put("norway".toUpperCase(), "Oslo".toUpperCase());
+		capitalCITIES.put("srilanka".toLowerCase(), "Sri Jayawardenepura Kotte".toLowerCase());
+		capitalCITIES.put("Indonesia".toLowerCase(), "Jakarta".toLowerCase());
+		getSize = capitalCITIES.size();
+		for(String cities: capitalCITIES.keySet()) {
+			System.out.println(cities.toUpperCase() + " Capital: \"" + capitalCITIES.get(cities).toUpperCase() + "\" City.");
+		}
 	}
 }
