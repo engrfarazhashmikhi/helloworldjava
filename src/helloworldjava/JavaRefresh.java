@@ -2,7 +2,10 @@ package helloworldjava;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class JavaRefresh extends Maths {
 	public void checkDrivingStatus() {
@@ -63,18 +66,40 @@ public class JavaRefresh extends Maths {
 		}
 	}
 
+	public void hashSetExample() {
+		HashSet<String> myCars = new HashSet<>();
+		myCars.add("Suzuki FX");
+		myCars.add("Honda Civic");
+		myCars.add("Toyota Land Crusier");
+		myCars.add("Suzuki Alto");
+		myCars.add("Suzuki FX");
+		myCars.add("Suzuki Alto");
+		System.out.format("%d%n", myCars.size());
+		System.out.format("%s%n", myCars);
+		boolean check = myCars.contains("Suzuki Alto");
+		System.out.println(check);
+		myCars.remove("Suzuki FX");
+		System.out.println(myCars);
+		System.out.format("%s%n", myCars.size());
+		System.out.format("%.2f%n", Float.parseFloat(String.valueOf(myCars.size())));
+		for (String s : myCars) {
+			System.out.format("%s%n", s);
+		}
+		myCars.clear();
+		System.out.format("%s%n", myCars);
+	}
+
 	public void JavaArray() {
-//		byte target, i;
-//		byte[] score = { 85, 92, 78, 99, 64 };
-//		target = 99;
-//		i = 0;
-//		for (i = 0; i <= (score.length - 1); i++) {
-//			if (score[i] == target) {
-//				System.out.println(target + " is at position: " + i);
-//				break;
-//				continue;
-//			}
-//		}
+		byte target, i;
+		byte[] score = { 85, 92, 78, 99, 64 };
+		target = 99;
+		i = 0;
+		for (i = 0; i <= (score.length - 1); i++) {
+			if (score[i] == target) {
+				System.out.println(target + " is at position: " + i);
+				continue;
+			}
+		}
 		char[] myCountry = new char[8];
 		myCountry[0] = 'P';
 		myCountry[1] = 'A';
@@ -101,7 +126,6 @@ public class JavaRefresh extends Maths {
 			byte[] counting = new byte[10];
 			System.out.format("%d", counting);
 			throw new ArrayIndexOutOfBoundsException("INDEX NOT FOUND");
-//			System.out.print(counting[11]);
 		} catch (Exception e) {
 			System.out.println("Errr: " + e.toString());
 		}
@@ -144,10 +168,9 @@ public class JavaRefresh extends Maths {
 
 	public void javaOperators() {
 //		Ternary Operator
-//		short age = 16, check;
-//		check = (age < 18) ? age++ : age--;
-//		System.out.println(check + ", " + age);
-
+		short age = 16, check;
+		check = (age < 18) ? age++ : age--;
+		System.out.println(check + ", " + age);
 //		instance of Operator
 		System.out.format("%s", ("Wellcome" instanceof String));
 
@@ -196,6 +219,29 @@ public class JavaRefresh extends Maths {
 		fun.display(statement);
 	}
 
+	public void linkedHashSetExample() {
+		LinkedHashSet<Integer> mySet = new LinkedHashSet<>();
+		int counting[] = new int[10];
+		for (int i = 0; i <= (counting.length - 1); i++) {
+			counting[i] = i;
+			for (int j = 0; j <= (i); j++) {
+				mySet.add(counting[j]);
+			}
+		}
+		System.out.format("%s%n", mySet);
+		mySet.remove(counting[0]);
+		System.out.format("%s%n", mySet);
+		boolean check = mySet.contains(counting[6]);
+		System.out.format("%s:%d%n", check, counting[6]);
+		for (Integer k : mySet) {
+			System.out.format("%s%n", k);
+		}
+		int getSize = mySet.size();
+		System.out.format("%s%d%n", "Size: ", getSize);
+		mySet.clear();
+		System.out.format("%s%n", mySet);
+	}
+
 	public void nonPrimitiveTypes() {
 		// Non Primitives DataTypes are programmer defined, except String and Array
 		// DataTypes.
@@ -213,7 +259,6 @@ public class JavaRefresh extends Maths {
 		}
 		i = 0;
 		do {
-//			i = 0;
 			System.out.println(i + ":" + textStatement);
 			i++;
 		} while (i < textStatement.length());
@@ -257,6 +302,45 @@ public class JavaRefresh extends Maths {
 		} else {
 			System.out.println("B is False");
 		}
+	}
+
+	public void treeSetExample() {
+		TreeSet<String> myTree = new TreeSet<>();
+		myTree.add("Apple Tree");
+		myTree.add("Mango Tree");
+		myTree.add("Guava Tree");
+		System.out.format("%s%n", myTree);
+		boolean check = myTree.contains("Peach Tree");
+		if (check) {
+			System.out.format("%s%n", check);
+		} else {
+			System.out.format("%s %s%n", "Tree NOT FOUND: ", check);
+		}
+		myTree.remove("Apple Tree");
+		System.out.format("%s%n", myTree);
+		myTree.add("Peach Tree");
+		System.out.format("%s%n", myTree);
+		myTree.clear();
+		System.out.format("%s%n", myTree);
+		int totalTrees = myTree.size();
+		if (totalTrees > 0) {
+			System.out.format("%s%n", "Plant More Trees.");
+		} else {
+			System.out.format("%s%n", "Start Trees PLANTATION.");
+		}
+		myTree.add("Apple Tree");
+		myTree.add("Peach Tree");
+		myTree.add("Mango Tree");
+		for (String tree : myTree) {
+			System.out.format("%s%n", tree);
+		}
+		totalTrees = myTree.size();
+		if (totalTrees > 0) {
+			System.out.format("%s%n", "Plant More Trees.");
+		} else {
+			System.out.format("%s%n", "Start Trees PLANTATION.");
+		}
+
 	}
 
 	public void typeCastingJava() {
