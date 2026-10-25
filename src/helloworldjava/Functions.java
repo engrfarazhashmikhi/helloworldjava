@@ -25,7 +25,8 @@ public class Functions extends JavaRefresh implements BasicFunctions {
 	public double returns_of_investement() {
 //		ROI	Formula: (Net_Profit / Investment * 100)
 		scans = new Scanner(System.in);
-		final var Net_Profit = calcuateNetProfit(Double.parseDouble(userInput(Messages.getString("Functions.0"), scans)), //$NON-NLS-1$
+		final var Net_Profit = calcuateNetProfit(
+				Double.parseDouble(userInput(Messages.getString("Functions.0"), scans)), //$NON-NLS-1$
 				Double.parseDouble(userInput(Messages.getString("Functions.1"), scans))); //$NON-NLS-1$
 		final var Total_Investment = Double.parseDouble(userInput(Messages.getString("Functions.2"), scans)); //$NON-NLS-1$
 		return Net_Profit / Total_Investment * 100;

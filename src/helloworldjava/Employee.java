@@ -17,7 +17,8 @@ public class Employee extends Person {
 	}
 
 	public void returnEmployeeDetails() {
-		System.out.println(Messages.getString("Employee.0") + getPersonName() + Messages.getString("Employee.1") + designation + Messages.getString("Employee.2") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		System.out.println(Messages.getString("Employee.0") + getPersonName() + Messages.getString("Employee.1") //$NON-NLS-1$ //$NON-NLS-2$
+				+ designation + Messages.getString("Employee.2") //$NON-NLS-1$
 				+ salary + Messages.getString("Employee.3")); //$NON-NLS-1$
 	}
 

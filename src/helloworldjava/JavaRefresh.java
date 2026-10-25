@@ -1,7 +1,6 @@
 package helloworldjava;
 
 import java.util.Date;
-
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.TreeSet;
-import java.util.HashMap;
+
 public class JavaRefresh extends Maths {
 	public void checkDrivingStatus() {
 		short yourAge, license;
@@ -66,6 +65,29 @@ public class JavaRefresh extends Maths {
 		System.out.println(Messages.getString("JavaRefresh.25")); //$NON-NLS-1$
 		for (b = 0; b < counting.length; b++) {
 			System.out.format(Messages.getString("JavaRefresh.26"), counting[b]); //$NON-NLS-1$
+		}
+	}
+
+	public void hashMapExample() {
+		final var cityCodes = new HashMap<String, String>();
+		cityCodes.put("KHI", "karachi City");
+		cityCodes.put("LHE", "Lahore City");
+		cityCodes.put("ISB", "Islamabad City");
+		var getSize = cityCodes.size();
+		System.out.format("%s %d %n", cityCodes, getSize);
+		final var myCity = cityCodes.get("KHI");
+		System.out.format("%s%n", myCity.toUpperCase());
+		cityCodes.remove("LHE");
+		getSize = cityCodes.size();
+		System.out.format("%s %d %n", cityCodes, getSize);
+		cityCodes.clear();
+		getSize = cityCodes.size();
+		System.out.format("%s %d %n", cityCodes, getSize);
+		cityCodes.put("KHI".toLowerCase(), "karachi City".toLowerCase());
+		cityCodes.put("LHE".toLowerCase(), "Lahore City".toLowerCase());
+		cityCodes.put("ISB".toLowerCase(), "Islamabad City".toLowerCase());
+		for (final String city : cityCodes.keySet()) {
+			System.out.format("%s: %s%n", city.toUpperCase(), cityCodes.get(city).toUpperCase());
 		}
 	}
 
@@ -199,7 +221,8 @@ public class JavaRefresh extends Maths {
 	}
 
 	public void javaSwitch() {
-		final String[] drinks = { Messages.getString("JavaRefresh.60"), Messages.getString("JavaRefresh.61"), Messages.getString("JavaRefresh.62") }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		final String[] drinks = { Messages.getString("JavaRefresh.60"), Messages.getString("JavaRefresh.61"), //$NON-NLS-1$ //$NON-NLS-2$
+				Messages.getString("JavaRefresh.62") }; //$NON-NLS-1$
 		final var fun = new Functions();
 		fun.display(Messages.getString("JavaRefresh.63")); //$NON-NLS-1$
 		fun.display(Messages.getString("JavaRefresh.64")); //$NON-NLS-1$
@@ -220,6 +243,31 @@ public class JavaRefresh extends Maths {
 			throw new IllegalArgumentException(Messages.getString("JavaRefresh.69") + option); //$NON-NLS-1$
 		}
 		fun.display(statement);
+	}
+
+	public void linkedHashMapExample() {
+		final var capitalCITIES = new LinkedHashMap<String, String>();
+		capitalCITIES.put("srilanka".toLowerCase(), "Sri Jayawardenepura Kotte".toLowerCase());
+		capitalCITIES.put("Indonesia".toLowerCase(), "Jakarta".toLowerCase());
+		var getSize = capitalCITIES.size();
+		System.out.format("%d:%s %n", getSize, capitalCITIES);
+		final var getCity = capitalCITIES.get("Indonesia".toLowerCase()).toUpperCase();
+		System.out.format("%s%n", getCity);
+		capitalCITIES.remove("srilanka".toLowerCase());
+		getSize = capitalCITIES.size();
+		System.out.format("%d:%s %n", getSize, capitalCITIES);
+		capitalCITIES.clear();
+		getSize = capitalCITIES.size();
+		System.out.format("%d:%s %n", getSize, capitalCITIES);
+		capitalCITIES.put("iceland".toUpperCase(), "Reykjav".toUpperCase());
+		capitalCITIES.put("norway".toUpperCase(), "Oslo".toUpperCase());
+		capitalCITIES.put("srilanka".toLowerCase(), "Sri Jayawardenepura Kotte".toLowerCase());
+		capitalCITIES.put("Indonesia".toLowerCase(), "Jakarta".toLowerCase());
+		getSize = capitalCITIES.size();
+		for (final String cities : capitalCITIES.keySet()) {
+			System.out.println(
+					cities.toUpperCase() + " Capital: \"" + capitalCITIES.get(cities).toUpperCase() + "\" City.");
+		}
 	}
 
 	public void linkedHashSetExample() {
@@ -307,6 +355,31 @@ public class JavaRefresh extends Maths {
 		}
 	}
 
+	public void treeMapExample() {
+		final var grades = new HashMap<String, Byte>();
+		grades.put("A-Grade", (byte) 90);
+		grades.put("B-Grade", (byte) 80);
+		grades.put("C-Grade", (byte) 70);
+		System.out.println(grades);
+		var getSize = (byte) grades.size();
+		System.out.println("Total GRADES: " + getSize);
+		final byte getPercentage = grades.get("B-Grade");
+		System.out.println("%tage: " + getPercentage);
+		grades.remove("C-Grade");
+		System.out.println(grades);
+		grades.put("D-Grade", (byte) 60);
+		grades.put("C-Grade", (byte) 70);
+		getSize = (byte) grades.size();
+		System.out.println("Total GRADES: " + getSize);
+		for (final String grade : grades.keySet()) {
+			System.out.println(grades.get(grade) + " = " + grade);
+		}
+		grades.clear();
+		System.out.println(grades);
+		getSize = (byte) grades.size();
+		System.out.println("Total GRADES: " + getSize);
+	}
+
 	public void treeSetExample() {
 		final var myTree = new TreeSet<String>();
 		myTree.add(Messages.getString("JavaRefresh.101")); //$NON-NLS-1$
@@ -351,82 +424,13 @@ public class JavaRefresh extends Maths {
 		System.out.println(Messages.getString("JavaRefresh.126")); //$NON-NLS-1$
 		byte b = 56;
 		final double d = b;
-		System.out.println(Messages.getString("JavaRefresh.127") + b + Messages.getString("JavaRefresh.128") + d + Messages.getString("JavaRefresh.129")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		System.out.println(Messages.getString("JavaRefresh.127") + b + Messages.getString("JavaRefresh.128") + d //$NON-NLS-1$ //$NON-NLS-2$
+				+ Messages.getString("JavaRefresh.129")); //$NON-NLS-1$
 
 //		Narrowing Casting: Explicit type Conversion in Java.
 		System.out.println(Messages.getString("JavaRefresh.130")); //$NON-NLS-1$
 		b = (byte) d;
-		System.out.println(Messages.getString("JavaRefresh.131") + d + Messages.getString("JavaRefresh.132") + b + Messages.getString("JavaRefresh.133")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-	}
-	public void hashMapExample() {
-		HashMap<String,String> cityCodes = new HashMap<String, String>();
-		int getSize = 0;
-		cityCodes.put("KHI","karachi City");
-		cityCodes.put("LHE","Lahore City");
-		cityCodes.put("ISB","Islamabad City");
-		getSize = cityCodes.size();
-		System.out.format("%s %d %n",cityCodes, getSize);
-		String myCity = cityCodes.get("KHI");
-		System.out.format("%s%n", myCity.toUpperCase());
-		cityCodes.remove("LHE");
-		getSize = cityCodes.size();
-		System.out.format("%s %d %n",cityCodes, getSize);
-		cityCodes.clear();
-		getSize = cityCodes.size();
-		System.out.format("%s %d %n",cityCodes, getSize);
-		cityCodes.put("KHI".toLowerCase(),"karachi City".toLowerCase());
-		cityCodes.put("LHE".toLowerCase(),"Lahore City".toLowerCase());
-		cityCodes.put("ISB".toLowerCase(),"Islamabad City".toLowerCase());
-		for(String city: cityCodes.keySet()) {
-			System.out.format("%s: %s%n",city.toUpperCase(), cityCodes.get(city).toUpperCase());
-		}
-	}
-	public void treeMapExample() {
-		HashMap<String, Byte> grades = new HashMap<String, Byte>(); 
-		grades.put("A-Grade", (byte)90);
-		grades.put("B-Grade", (byte)80);
-		grades.put("C-Grade", (byte)70);
-		System.out.println(grades);
-		byte getSize = (byte) grades.size();
-		System.out.println("Total GRADES: " + getSize);
-		byte getPercentage = grades.get("B-Grade");
-		System.out.println("%tage: " + getPercentage);
-		grades.remove("C-Grade");
-		System.out.println(grades);
-		grades.put("D-Grade", (byte)60);
-		grades.put("C-Grade", (byte)70);
-		getSize = (byte)grades.size();
-		System.out.println("Total GRADES: " + getSize);
-		for(String grade: grades.keySet()) {
-			System.out.println(grades.get(grade) + " = " + grade);
-		}
-		grades.clear();
-		System.out.println(grades);
-		getSize = (byte)grades.size();
-		System.out.println("Total GRADES: " + getSize);
-	}
-	public void linkedHashMapExample() {
-		LinkedHashMap<String, String> capitalCITIES = new LinkedHashMap<String, String>();
-		int getSize = 0;
-		capitalCITIES.put("srilanka".toLowerCase(), "Sri Jayawardenepura Kotte".toLowerCase());
-		capitalCITIES.put("Indonesia".toLowerCase(), "Jakarta".toLowerCase());
-		getSize = capitalCITIES.size();
-		System.out.format("%d:%s %n",getSize, capitalCITIES);
-		String getCity = capitalCITIES.get("Indonesia".toLowerCase()).toUpperCase();
-		System.out.format("%s%n",getCity);
-		capitalCITIES.remove("srilanka".toLowerCase());
-		getSize = capitalCITIES.size();
-		System.out.format("%d:%s %n",getSize, capitalCITIES);
-		capitalCITIES.clear();
-		getSize = capitalCITIES.size();
-		System.out.format("%d:%s %n",getSize, capitalCITIES);
-		capitalCITIES.put("iceland".toUpperCase(), "Reykjav".toUpperCase());
-		capitalCITIES.put("norway".toUpperCase(), "Oslo".toUpperCase());
-		capitalCITIES.put("srilanka".toLowerCase(), "Sri Jayawardenepura Kotte".toLowerCase());
-		capitalCITIES.put("Indonesia".toLowerCase(), "Jakarta".toLowerCase());
-		getSize = capitalCITIES.size();
-		for(String cities: capitalCITIES.keySet()) {
-			System.out.println(cities.toUpperCase() + " Capital: \"" + capitalCITIES.get(cities).toUpperCase() + "\" City.");
-		}
+		System.out.println(Messages.getString("JavaRefresh.131") + d + Messages.getString("JavaRefresh.132") + b //$NON-NLS-1$ //$NON-NLS-2$
+				+ Messages.getString("JavaRefresh.133")); //$NON-NLS-1$
 	}
 }
