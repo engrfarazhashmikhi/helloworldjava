@@ -1,14 +1,7 @@
 package helloworldjava;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.util.*;
+
 public class JavaRefresh extends Maths {
 	public void checkDrivingStatus() {
 		short yourAge, license;
@@ -137,6 +130,28 @@ public class JavaRefresh extends Maths {
 		System.out.print(myCountry);
 	}
 
+	public void javaBinarySearchExample() {
+		final var numbs = new ArrayList<Double>();
+		var count = 0D;
+		while (true) {
+			numbs.add(Math.random());
+			count++;
+			if (count >= 9) {
+				break;
+			}
+		}
+		count = 0;
+		System.out.format("Unsorted: %s%n", numbs);
+		count = numbs.get(2);
+		Collections.sort(numbs, Collections.reverseOrder());
+		Collections.shuffle(numbs);
+		final var findNumber = Collections.binarySearch(numbs, count);
+		System.out.format("Sorted: %s%n", numbs);
+		System.out.println(count + " Found At Index: " + findNumber);
+		System.out.println("Largest: " + Collections.max(numbs));
+		System.out.println("Smallest: " + Collections.min(numbs));
+	}
+
 	public void javaDatesAndTime() {
 //		Java Dates and Time Library.
 		final var dT = new Date();
@@ -157,7 +172,7 @@ public class JavaRefresh extends Maths {
 	}
 
 	public void javaIteratorExample() {
-		final var cars = new ArrayList<>();
+		final var cars = new ArrayList<String>();
 		cars.add("BMW");
 		cars.add("Mercedes");
 		cars.add("Audi");
