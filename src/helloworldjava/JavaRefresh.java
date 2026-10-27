@@ -1,5 +1,6 @@
 package helloworldjava;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
@@ -8,7 +9,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.TreeSet;
-
 public class JavaRefresh extends Maths {
 	public void checkDrivingStatus() {
 		short yourAge, license;
@@ -153,6 +153,17 @@ public class JavaRefresh extends Maths {
 			throw new ArrayIndexOutOfBoundsException(Messages.getString("JavaRefresh.46")); //$NON-NLS-1$
 		} catch (final Exception e) {
 			System.out.println(Messages.getString("JavaRefresh.47") + e.toString()); //$NON-NLS-1$
+		}
+	}
+
+	public void javaIteratorExample() {
+		final var cars = new ArrayList<>();
+		cars.add("BMW");
+		cars.add("Mercedes");
+		cars.add("Audi");
+		final var loops = cars.iterator();
+		while (loops.hasNext()) {
+			System.out.println(loops.next());
 		}
 	}
 
